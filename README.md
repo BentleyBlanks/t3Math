@@ -10,9 +10,7 @@ Tatty3D's cross-platform math module for stable ```mathematical```, ```matrix```
   
 - t3Vector4 and t3Matrix is not avaliable.
   
-  ​
-  
-  ​
+
 
 ### About
 

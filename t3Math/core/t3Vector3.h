@@ -46,9 +46,10 @@ public:
 	t3Vector3<Type>& operator+=(const t3Vector3<Type>& vector);
 	t3Vector3<Type>  operator-(const t3Vector3<Type>& vector) const;
 	t3Vector3<Type>& operator-=(const t3Vector3<Type>& vector);
-	// Not Dot Product
-	t3Vector3<Type>  operator*(const t3Vector3<Type>& vector) const;
-	t3Vector3<Type>& operator*=(const t3Vector3<Type>& vector);
+	// Dot Product
+	Type operator*(const t3Vector3<Type>& vector) const;
+    // *= Not Exist
+	//t3Vector3<Type>& operator*=(const t3Vector3<Type>& vector);
 	// Not valid in mathmatics
 	t3Vector3<Type>  operator/(const t3Vector3<Type>& vector) const;
 	t3Vector3<Type>& operator/=(const t3Vector3<Type>& vector);
@@ -141,9 +142,9 @@ public:
 	static t3Vector3<Type> one(){ return t3Vector3<float>(1, 1, 1); }
 
 	// 测试使用的Console Log输出
-	void print(std::string name);
+	void print(std::string name) const;
 
-	void print();
+    void print() const;
 };
 
 
@@ -250,19 +251,19 @@ inline t3Vector3<Type>& t3Vector3<Type>::operator-=(const t3Vector3<Type>& vecto
 }
 
 template<typename Type>
-inline t3Vector3<Type> t3Vector3<Type>::operator*(const t3Vector3<Type>& vector) const
+inline Type t3Vector3<Type>::operator*(const t3Vector3<Type>& vector) const
 {
-	return t3Vector3<Type>(x*vector.x, y*vector.y, z*vector.z);
+    return x*vector.x + y*vector.y + z*vector.z;
 }
 
-template<typename Type>
-inline t3Vector3<Type>& t3Vector3<Type>::operator*=(const t3Vector3<Type>& vector)
-{
-	x *= vector.x;
-	y *= vector.y;
-	z *= vector.z;
-	return *this;
-}
+//template<typename Type>
+//inline t3Vector3<Type>& t3Vector3<Type>::operator*=(const t3Vector3<Type>& vector)
+//{
+//	x *= vector.x;
+//	y *= vector.y;
+//	z *= vector.z;
+//	return *this;
+//}
 
 template<typename Type>
 inline t3Vector3<Type> t3Vector3<Type>::operator/(const t3Vector3<Type>& vector) const
@@ -610,7 +611,7 @@ inline float t3Vector3<Type>::dot(const t3Vector3<Type>& vector) const
 
 // For test to print in console
 template<typename Type>
-inline void t3Vector3<Type>::print(std::string name)
+inline void t3Vector3<Type>::print(std::string name) const
 {
 #ifdef _DEBUG
 	// test name null
@@ -622,7 +623,7 @@ inline void t3Vector3<Type>::print(std::string name)
 }
 
 template<typename Type>
-inline void t3Vector3<Type>::print()
+inline void t3Vector3<Type>::print() const
 {
 #ifdef _DEBUG
 	std::cout << "t3Vector3 ";

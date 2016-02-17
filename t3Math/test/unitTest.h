@@ -31,8 +31,8 @@ int main()
 	c = a - b;
 	c -= a;
 
-	c = a * b;
-	c *= a;
+	float aaa = a * b;
+	//c *= a;
 	b.x = 10;
 	c = a / b;
 	c /= b;
@@ -86,6 +86,8 @@ int main()
 
 	f = t3Vector3f::one();
 	f = t3Vector3f::zero();
+
+    f.print("sfwefwef");
 
 	getchar();
 

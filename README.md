@@ -8,7 +8,7 @@ Tatty3D's cross-platform math module for stable ```mathematical```, ```matrix```
 
 - t3Vector3's ```rotate``` and ```map``` API is not avaliable.
   
-- t3Vector4 and t3Matrix is not avaliable.
+- t3Math and t3Matrix is not avaliable.
   
 
 

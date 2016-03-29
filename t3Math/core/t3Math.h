@@ -1,5 +1,5 @@
-#ifndef A3_MATH_H
-#define A3_MATH_H
+#ifndef T3_MATH_H
+#define T3_MATH_H
 
 #include <t3Math/core/t3MathSettings.h>
 
@@ -15,10 +15,10 @@ public:
     static T3_FORCE_INLINE float pi();
 
     // Returns the largest positive value that a 32 Bit float can represent. 
-    static T3_FORCE_INLINE float FloatMaxPos();
+    //static T3_FORCE_INLINE float FloatMaxPos();
 
     // Returns the largest negative value that a 32 Bit float can represent. 
-    static T3_FORCE_INLINE float FloatMaxNeg();
+    //static T3_FORCE_INLINE float FloatMaxNeg();
 
     // -----------------------Trigonometric Functions-----------------------
     // Converts a given value from degree to radians. 
@@ -189,53 +189,53 @@ public:
     template<class T >
     static T3_FORCE_INLINE T Max(T t1, T t2, T t3, T t4, T t5);
 
-    // Returns the smallest of the given values. 
-    static T3_FORCE_INLINE int 	Min(int t1, int t2);
+    //// Returns the smallest of the given values. 
+    //static T3_FORCE_INLINE int 	Min(int t1, int t2);
 
-    // Returns the smallest of the given values. 
-    static T3_FORCE_INLINE int 	Min(int t1, int t2, int t3);
+    //// Returns the smallest of the given values. 
+    //static T3_FORCE_INLINE int 	Min(int t1, int t2, int t3);
 
-    // Returns the smallest of the given values. 
-    static T3_FORCE_INLINE int 	Min(int t1, int t2, int t3, int t4);
+    //// Returns the smallest of the given values. 
+    //static T3_FORCE_INLINE int 	Min(int t1, int t2, int t3, int t4);
 
-    // Returns the smallest of the given values. 
-    static T3_FORCE_INLINE int 	Min(int t1, int t2, int t3, int t4, int t5);
+    //// Returns the smallest of the given values. 
+    //static T3_FORCE_INLINE int 	Min(int t1, int t2, int t3, int t4, int t5);
 
-    // Returns the largest of the given values. 
-    static T3_FORCE_INLINE int 	Max(int t1, int t2);
+    //// Returns the largest of the given values. 
+    //static T3_FORCE_INLINE int 	Max(int t1, int t2);
 
-    // Returns the largest of the given values. 
-    static T3_FORCE_INLINE int 	Max(int t1, int t2, int t3);
+    //// Returns the largest of the given values. 
+    //static T3_FORCE_INLINE int 	Max(int t1, int t2, int t3);
 
-    // Returns the largest of the given values. 
-    static T3_FORCE_INLINE int 	Max(int t1, int t2, int t3, int t4);
+    //// Returns the largest of the given values. 
+    //static T3_FORCE_INLINE int 	Max(int t1, int t2, int t3, int t4);
 
-    // Returns the largest of the given values. 
-    static T3_FORCE_INLINE int 	Max(int t1, int t2, int t3, int t4, int t5);
+    //// Returns the largest of the given values. 
+    //static T3_FORCE_INLINE int 	Max(int t1, int t2, int t3, int t4, int t5);
 
-    // Returns the smallest of the given values. 
-    static T3_FORCE_INLINE unsigned int Min(unsigned int t1, unsigned int t2);
+    //// Returns the smallest of the given values. 
+    //static T3_FORCE_INLINE unsigned int Min(unsigned int t1, unsigned int t2);
 
-    // Returns the smallest of the given values. 
-    static T3_FORCE_INLINE unsigned int Min(unsigned int t1, unsigned int t2, unsigned int t3);
+    //// Returns the smallest of the given values. 
+    //static T3_FORCE_INLINE unsigned int Min(unsigned int t1, unsigned int t2, unsigned int t3);
 
-    // Returns the smallest of the given values. 
-    static T3_FORCE_INLINE unsigned int Min(unsigned int t1, unsigned int t2, unsigned int t3, unsigned int t4);
+    //// Returns the smallest of the given values. 
+    //static T3_FORCE_INLINE unsigned int Min(unsigned int t1, unsigned int t2, unsigned int t3, unsigned int t4);
 
-    // Returns the smallest of the given values. 
-    static T3_FORCE_INLINE unsigned int Min(unsigned int t1, unsigned int t2, unsigned int t3, unsigned int t4, unsigned int t5);
+    //// Returns the smallest of the given values. 
+    //static T3_FORCE_INLINE unsigned int Min(unsigned int t1, unsigned int t2, unsigned int t3, unsigned int t4, unsigned int t5);
 
-    // Returns the largest of the given values. 
-    static T3_FORCE_INLINE unsigned int Max(unsigned int t1, unsigned int t2);
+    //// Returns the largest of the given values. 
+    //static T3_FORCE_INLINE unsigned int Max(unsigned int t1, unsigned int t2);
 
-    // Returns the largest of the given values. 
-    static T3_FORCE_INLINE unsigned int Max(unsigned int t1, unsigned int t2, unsigned int t3);
+    //// Returns the largest of the given values. 
+    //static T3_FORCE_INLINE unsigned int Max(unsigned int t1, unsigned int t2, unsigned int t3);
 
-    // Returns the largest of the given values. 
-    static T3_FORCE_INLINE unsigned int Max(unsigned int t1, unsigned int t2, unsigned int t3, unsigned int t4);
+    //// Returns the largest of the given values. 
+    //static T3_FORCE_INLINE unsigned int Max(unsigned int t1, unsigned int t2, unsigned int t3, unsigned int t4);
 
-    // Returns the largest of the given values.
-    static T3_FORCE_INLINE unsigned int Max(unsigned int t1, unsigned int t2, unsigned int t3, unsigned int t4, unsigned int t5);
+    //// Returns the largest of the given values.
+    //static T3_FORCE_INLINE unsigned int Max(unsigned int t1, unsigned int t2, unsigned int t3, unsigned int t4, unsigned int t5);
 
     // Returns val clamped to the range [tMin;tMax]. 
     template<class T >
@@ -277,6 +277,8 @@ public:
     // Returns a float NaN (Not-A-Number). Can be used to set values to an invalid state. 
     static T3_FORCE_INLINE float generateNaN(void);
 
+    static T3_FORCE_INLINE float generateInfinity(void);
+
     // -----------------------Utility Functions-----------------------
     // Swaps the values of the variables t1 and t2.in place. 
     template<class T >
@@ -291,5 +293,8 @@ public:
     static T3_FORCE_INLINE T interpolate(const T &val1, const T &val2, double fInterpolation);
 
 };
+
+
+#include <t3Math/core/t3Math.inl>
 
 #endif

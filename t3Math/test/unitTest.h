@@ -39,7 +39,7 @@ int main()
 	c = a - b;
 	c -= a;
 
-	float aaa = a * b;
+	t3Vector4f aaa = a * b;
 	//c *= a;
 	b.x = 10;
 	c = a / b;
@@ -93,7 +93,13 @@ int main()
 
     f.print("sfwefwef");
 
-	getchar();
+    t3Vector2f xxx;
+    xxx.print("dhvoiwe");
+    
+    t3Vector3f qwer(1);
+    t3Vector3d asdf = t3Vector3d(qwer);
+
+    getchar();
 
 	return 0;
 }

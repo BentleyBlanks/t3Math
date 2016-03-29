@@ -1,6 +1,8 @@
 ﻿#ifndef T3_VECTOR2_H
 #define T3_VECTOR2_H
 
+#include <iostream>
+#include <string>
 #include <t3Math/core/t3MathSettings.h>
 
 template <class Type>
@@ -85,10 +87,12 @@ public:
 #include <t3Math/core/t3Vector2.inl>
 
 // 特化
+typedef t3Vector2<double> t3Vector2d;
 typedef t3Vector2<float> t3Vector2f;
 typedef t3Vector2<int> t3Vector2i;
 
 // t2Point
+typedef t3Vector2d t2Point2d;
 typedef t3Vector2f t2Point2f;
 typedef t3Vector2i t2Point2i;
 

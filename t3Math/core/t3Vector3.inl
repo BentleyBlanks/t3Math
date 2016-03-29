@@ -12,7 +12,8 @@ inline t3Vector3<Type>::t3Vector3(Type x, Type y, Type z) : x(x), y(y), z(z) {}
 template<typename Type>
 inline t3Vector3<Type>::t3Vector3(Type scalar) : x(scalar), y(scalar), z(scalar) {}
 template<typename Type>
-inline t3Vector3<Type>::t3Vector3(const t3Vector3<Type>& vector) : x(vector.x), y(vector.y), z(vector.z) {}
+template <typename Type2>
+inline t3Vector3<Type>::t3Vector3(const t3Vector3<Type2>& vector) : x((Type2) vector.x), y((Type2) vector.y), z((Type2) vector.z) {}
 
 
 // Getters and Setters.
@@ -42,7 +43,7 @@ inline void t3Vector3<Type>::set(Type scalar)
 
 // Check similarity/equality.
 template<typename Type>
-inline bool t3Vector3<Type>::operator==(const t3Vector3<Type>& vector)
+inline bool t3Vector3<Type>::operator==(const t3Vector3<Type>& vector) const
 {
     return (x == vector.x) && (y == vector.y) && (z == vector.z);
 }
@@ -54,7 +55,7 @@ inline bool t3Vector3<Type>::operator!=(const t3Vector3<Type>& vector) const
 }
 
 template<typename Type>
-T3_FORCE_INLINE bool t3Vector3<Type>::match(const t3Vector3<Type>& vector, float tolerance = 0.0001) const
+T3_FORCE_INLINE bool t3Vector3<Type>::match(const t3Vector3<Type>& vector, float tolerance/* = 0.0001*/) const
 {
     return (fabs(x - vector.x) < tolerance)
         && (fabs(y - vector.y) < tolerance)
@@ -93,19 +94,19 @@ inline t3Vector3<Type>& t3Vector3<Type>::operator-=(const t3Vector3<Type>& vecto
 }
 
 template<typename Type>
-inline Type t3Vector3<Type>::operator*(const t3Vector3<Type>& vector) const
+inline t3Vector3<Type> t3Vector3<Type>::operator*(const t3Vector3<Type>& vector) const
 {
-    return x*vector.x + y*vector.y + z*vector.z;
+    return t3Vector3<Type>(x*vector.x, y*vector.y, z*vector.z);
 }
 
-//template<typename Type>
-//inline t3Vector3<Type>& t3Vector3<Type>::operator*=(const t3Vector3<Type>& vector)
-//{
-//	x *= vector.x;
-//	y *= vector.y;
-//	z *= vector.z;
-//	return *this;
-//}
+template<typename Type>
+inline t3Vector3<Type>& t3Vector3<Type>::operator*=(const t3Vector3<Type>& vector)
+{
+	x *= vector.x;
+	y *= vector.y;
+	z *= vector.z;
+	return *this;
+}
 
 template<typename Type>
 inline t3Vector3<Type> t3Vector3<Type>::operator/(const t3Vector3<Type>& vector) const
@@ -131,6 +132,15 @@ template<typename Type>
 inline t3Vector3<Type> t3Vector3<Type>::operator-() const
 {
     return t3Vector3<Type>(-x, -y, -z);
+}
+
+template<typename Type>
+inline t3Vector3<Type>& t3Vector3<Type>::operator=(const t3Vector3<Type>& vector)
+{
+    x = vector.x;
+    y = vector.y;
+    z = vector.z;
+    return *this;
 }
 
 // operator overloading for float
@@ -224,7 +234,7 @@ T3_FORCE_INLINE t3Vector3<Type> t3Vector3<Type>::scale(const float length)
 
 // Distance between two points.
 template<typename Type>
-T3_FORCE_INLINE float t3Vector3<Type>::distance(const t3Vector3<Type>& point) const
+T3_FORCE_INLINE Type t3Vector3<Type>::distance(const t3Vector3<Type>& point) const
 {
     float vx = x - point.x;
     float vy = y - point.y;
@@ -233,7 +243,7 @@ T3_FORCE_INLINE float t3Vector3<Type>::distance(const t3Vector3<Type>& point) co
 }
 
 template<typename Type>
-T3_FORCE_INLINE float t3Vector3<Type>::squareDistance(const t3Vector3<Type>& point) const
+T3_FORCE_INLINE Type t3Vector3<Type>::squareDistance(const t3Vector3<Type>& point) const
 {
     float vx = x - point.x;
     float vy = y - point.y;
@@ -412,13 +422,13 @@ T3_FORCE_INLINE t3Vector3<Type>& t3Vector3<Type>::perpendicular(const t3Vector3<
 
 // Length
 template<typename Type>
-T3_FORCE_INLINE float t3Vector3<Type>::length() const
+T3_FORCE_INLINE Type t3Vector3<Type>::length() const
 {
     return (float) sqrt(x*x + y*y + z*z);
 }
 
 template<typename Type>
-T3_FORCE_INLINE float t3Vector3<Type>::lengthSquared() const
+T3_FORCE_INLINE Type t3Vector3<Type>::lengthSquared() const
 {
     return (float) (x*x + y*y + z*z);
 }
@@ -429,7 +439,7 @@ T3_FORCE_INLINE float t3Vector3<Type>::lengthSquared() const
 * http://www.euclideanspace.com/maths/algebra/vectors/angleBetween/index.htm
 */
 template<typename Type>
-T3_FORCE_INLINE float t3Vector3<Type>::angle(const t3Vector3<Type>& vector) const
+T3_FORCE_INLINE Type t3Vector3<Type>::angle(const t3Vector3<Type>& vector) const
 {
     t3Vector3<Type> n1 = this->normalized();
     t3Vector3<Type> n2 = vector.normalized();
@@ -437,7 +447,7 @@ T3_FORCE_INLINE float t3Vector3<Type>::angle(const t3Vector3<Type>& vector) cons
 }
 
 template<typename Type>
-T3_FORCE_INLINE float t3Vector3<Type>::angleRad(const t3Vector3<Type>& vector) const
+T3_FORCE_INLINE Type t3Vector3<Type>::angleRad(const t3Vector3<Type>& vector) const
 {
     t3Vector3<Type> n1 = this->normalized();
     t3Vector3<Type> n2 = vector.normalized();
@@ -446,7 +456,7 @@ T3_FORCE_INLINE float t3Vector3<Type>::angleRad(const t3Vector3<Type>& vector) c
 
 // Dot Product
 template<typename Type>
-T3_FORCE_INLINE float t3Vector3<Type>::dot(const t3Vector3<Type>& vector) const
+T3_FORCE_INLINE Type t3Vector3<Type>::dot(const t3Vector3<Type>& vector) const
 {
     return x*vector.x + y*vector.y + z*vector.z;
 }

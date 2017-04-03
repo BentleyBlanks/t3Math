@@ -99,6 +99,16 @@ int main()
     t3Vector3f qwer(1);
     t3Vector3d asdf = t3Vector3d(qwer);
 
+
+    t3Vector3i iA(1, 2, 3), iB(iA);
+
+    t3Vector3d dA(1, 2, 3), dB(iA);
+    iB.print();
+    dB.print();
+
+    t3Vector2d iF(1.0f, 2.3f);
+    t3Vector2i iC(1, 22), iD(iC), iE(iF);
+
     getchar();
 
 	return 0;

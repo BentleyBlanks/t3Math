@@ -124,7 +124,7 @@ T3_FORCE_INLINE float t3Math::tanRad(float rad)
 
 T3_FORCE_INLINE float t3Math::asinDeg(float f)
 {
-    return ::asinf(f) * T3MATH_DEG_TO_RAD;
+    return ::asinf(f) * T3MATH_RAD_TO_DEG;
 }
 
 T3_FORCE_INLINE float t3Math::asinRad(float f)
@@ -134,7 +134,7 @@ T3_FORCE_INLINE float t3Math::asinRad(float f)
 
 T3_FORCE_INLINE float t3Math::acosDeg(float f)
 {
-    return ::acosf(f) * T3MATH_DEG_TO_RAD;
+    return ::acosf(f) * T3MATH_RAD_TO_DEG;
 }
 
 T3_FORCE_INLINE float t3Math::acosRad(float f)
@@ -144,7 +144,7 @@ T3_FORCE_INLINE float t3Math::acosRad(float f)
 
 T3_FORCE_INLINE float t3Math::atanDeg(float f)
 {
-    return ::atan(f) * T3MATH_DEG_TO_RAD;
+    return ::atan(f) * T3MATH_RAD_TO_DEG;
 }
 
 T3_FORCE_INLINE float t3Math::atanRad(float f)
@@ -154,7 +154,7 @@ T3_FORCE_INLINE float t3Math::atanRad(float f)
 
 T3_FORCE_INLINE float t3Math::atan2Deg(float y, float x)
 {
-    return ::atan2f(y, x) * T3MATH_DEG_TO_RAD;
+    return ::atan2f(y, x) * T3MATH_RAD_TO_DEG;
 }
 
 T3_FORCE_INLINE float t3Math::atan2Rad(float y, float x)

@@ -3,7 +3,7 @@
 #define T3_STDCALL		__stdcall				/* Standard calling convention */
 
 //#define T3_FORCE_INLINE __forceinline			/* Force code to be inline */
-#ifdef _MSC_VER_ // for MSVC
+#ifdef _MSC_VER // for MSVC
 #define T3_FORCE_INLINE __forceinline
 #elif defined __GNUC__ // for gcc on Linux/Apple OS X
 #define T3_FORCE_INLINE __inline__ __attribute__((always_inline))

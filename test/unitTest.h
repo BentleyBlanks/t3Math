@@ -1,7 +1,7 @@
 ﻿#include <iostream>
-#include <t3Math/core/t3Vector2.h>
-#include <t3Math/core/t3Vector3.h>
-#include <t3Math/core/t3Vector4.h>
+#include <t3Vector2.h>
+#include <t3Vector3.h>
+#include <t3Vector4.h>
 
 // withnot using ant unit test lib
 using namespace std;
@@ -18,6 +18,8 @@ int main()
     t3Vector4f a(10, 20, 30, 5), b(0, 40, 50, 5);
 
     t3Vector4f c(5);
+    for(int i = 0; i < 5; i++)
+        std::cout << " c[" << i << "]: " << c[i];
 #endif
 
 	c.print("c");

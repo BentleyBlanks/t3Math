@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3Matri4x4.cpp">
+      <Filter>t3Math</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3Quaternion.cpp">
+      <Filter>t3Math</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\test\main.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3Math.h">
+      <Filter>t3Math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3MathSettings.h">
+      <Filter>t3Math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3Matri4x4.h">
+      <Filter>t3Math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3Quaternion.h">
+      <Filter>t3Math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3Vector2.h">
+      <Filter>t3Math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3Vector3.h">
+      <Filter>t3Math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\t3Math\t3Vector4.h">
+      <Filter>t3Math</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\test\unitTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Bentl\Documents\Program\Sophia\Sophia\thirdparty\t3Math\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Test">
+      <UniqueIdentifier>{F8976E55-72C1-34DE-962C-D1B9D30461C4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="t3Math">
+      <UniqueIdentifier>{9C388CFC-3099-3D28-B77A-FBDB97902A54}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

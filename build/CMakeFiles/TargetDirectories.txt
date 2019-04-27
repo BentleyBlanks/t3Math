@@ -1,0 +1,3 @@
+C:/Users/Bentl/Documents/Program/Sophia/Sophia/thirdparty/t3Math/build/CMakeFiles/t3Math.dir
+C:/Users/Bentl/Documents/Program/Sophia/Sophia/thirdparty/t3Math/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Bentl/Documents/Program/Sophia/Sophia/thirdparty/t3Math/build/CMakeFiles/ZERO_CHECK.dir

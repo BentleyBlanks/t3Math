@@ -17,7 +17,7 @@ inline t3Vector2<Type>::t3Vector2(const t3Vector2<Type>& vector) : x(vector.x), 
 // t3Vector2<Type>->t3Vector2<Type2> explict防止隐式转换
 template<typename Type>
 template <typename Type2>
-inline t3Vector2<Type>::t3Vector2(const t3Vector2<Type2> &vector) : x(vector.x), y(vector.y) {}
+inline t3Vector2<Type>::t3Vector2(const t3Vector2<Type2> &vector) : x((Type)vector.x), y((Type)vector.y) {}
 
 template <class Type>
 T3_FORCE_INLINE void t3Vector2<Type>::clone(const t3Vector2<Type>& vector)
@@ -35,15 +35,6 @@ template <class Type>
 T3_FORCE_INLINE void t3Vector2<Type>::set(const Type x, const Type y)
 {
     this->x = x; this->y = y;
-}
-
-// 置为零向量
-template <class Type>
-T3_FORCE_INLINE void t3Vector2<Type>::zero()
-{
-    // --!之所以此处不(Type)强制类型转换 是因为意义不大 但是却消耗比较大的速度
-    x = 0;
-    y = 0;
 }
 
 // 将此2D向量标准化

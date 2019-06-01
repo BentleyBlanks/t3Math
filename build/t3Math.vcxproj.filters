@@ -48,4 +48,21 @@
       <UniqueIdentifier>{9C388CFC-3099-3D28-B77A-FBDB97902A54}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\t3Math\t3Vector2.inl">
+      <Filter>t3Math</Filter>
+    </None>
+    <None Include="..\t3Math\t3Vector3.inl">
+      <Filter>t3Math</Filter>
+    </None>
+    <None Include="..\t3Math\t3Vector4.inl">
+      <Filter>t3Math</Filter>
+    </None>
+    <None Include="..\t3Math\t3Math.inl">
+      <Filter>t3Math</Filter>
+    </None>
+    <None Include="..\t3Math\t3Matrix4x4.inl">
+      <Filter>t3Math</Filter>
+    </None>
+  </ItemGroup>
 </Project>

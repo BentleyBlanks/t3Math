@@ -12,10 +12,7 @@ public:
 	Type x, y;
 
     t3Vector2();
-
     t3Vector2(Type x, Type y);
-
-	// 复制构造
     t3Vector2(const t3Vector2<Type>& vector);
 
     // t3Vector2<Type>->t3Vector2<Type2>
@@ -25,12 +22,9 @@ public:
     T3_FORCE_INLINE void clone(const t3Vector2<Type>& vector);
 
     T3_FORCE_INLINE void set(t3Vector2& vector);
-
     T3_FORCE_INLINE void set(const Type x, const Type y);
 
-	// 重载 =
 	inline t3Vector2<Type>& operator=(const t3Vector2<Type>& vector);
-	// 重载 == !=
     inline bool operator==(const t3Vector2<Type>& vector) const;
     inline bool operator!=(const t3Vector2<Type>& vector) const;
 
@@ -47,7 +41,7 @@ public:
 	// 会对
     inline t3Vector2<Type> operator/(const Type scale) const;
 
-	// 重载 += -= *= /=
+	// overload += -= *= /=
     inline t3Vector2<Type>& operator+=(const t3Vector2<Type>& vector);
     inline t3Vector2<Type>& operator-=(const t3Vector2<Type>& vector);
     inline t3Vector2<Type>& operator*=(const Type scale);
@@ -56,15 +50,13 @@ public:
 	// 向量 * vector(无需inline一个右乘 因为类型相同左右不分)
     inline Type operator*(const t3Vector2<Type>& vector) const;
 
-	// 置为零向量
-    T3_FORCE_INLINE void zero();
-
-	// 将此2D向量标准化
+	// return all zero vector
+    T3_FORCE_INLINE static t3Vector2<Type> zero() { return t3Vector2<Type>(0, 0); }
+	// return all one vector
+    T3_FORCE_INLINE static t3Vector2<Type> one() { return t3Vector2<Type>(1, 1); }
     T3_FORCE_INLINE bool normalize();
 
-	// 求模长
     T3_FORCE_INLINE Type getLength() const;
-
     T3_FORCE_INLINE Type getLengthSquare() const;
 
 	// 叉积
@@ -76,16 +68,13 @@ public:
 
     T3_FORCE_INLINE Type dot(const t3Vector2<Type>& vector) const;
 
-	// 两点间距离
+	// get distance between two points
     T3_FORCE_INLINE Type getDistance(const t3Vector2<Type>& end) const;
-
     T3_FORCE_INLINE Type getDistanceSquare(const t3Vector2<Type>& end) const;
 
-	// 测试使用的Console Log输出
+	// For debug use
     T3_FORCE_INLINE void print(std::string name);
-
     T3_FORCE_INLINE void print();
-
 };
 
 #include <t3Vector2.inl>
@@ -103,6 +92,5 @@ typedef t3Vector2i t2Point2i;
 //// 零向量
 //static t3Vector2f t3Vector2fZero;
 //static t3Vector2i t3Vector2iZero;
-
 
 #endif

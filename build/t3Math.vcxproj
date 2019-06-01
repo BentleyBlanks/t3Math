@@ -336,6 +336,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\t3Math\t3Math.inl" />
+    <None Include="..\t3Math\t3Matrix4x4.inl" />
+    <None Include="..\t3Math\t3Vector2.inl" />
+    <None Include="..\t3Math\t3Vector3.inl" />
+    <None Include="..\t3Math\t3Vector4.inl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
